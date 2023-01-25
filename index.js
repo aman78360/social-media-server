@@ -41,6 +41,9 @@ app.get("/", (request, response) => {
 
 const PORT = process.env.PORT;
 dbConnect();
-app.listen(PORT, () => {
-	console.log("process listening on port " + PORT);
-});
+
+if (process.env.PORT) {
+	app.listen(PORT, () => {
+		console.log("process listening on port " + PORT);
+	});
+}
